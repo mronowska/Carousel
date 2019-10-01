@@ -1,0 +1,85 @@
+/* Box-sizing reset: //w3bits.com/?p=3225 */
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  height: 100vh;
+  background-color: #264cbf;
+}
+
+.header__title {
+  text-align: center;
+  font-size: 3em;
+  margin: 1em 0 1.5em 0;
+  color: #FFF;
+}
+
+.masonry {
+  margin: 1.5 auto;
+  max-width: 100%;
+  -webkit-column-gap: 1.5em;
+          column-gap: 1.5em;
+  /* Masonry on large screens */
+  /* Masonry on medium-sized screens */
+  /* Masonry on small screens */
+}
+.masonry__item {
+  background: #0B2573;
+  margin: 0 9px 9px 9px;
+  padding: 1.5em;
+}
+.masonry__description {
+  display: inline-block;
+  line-height: 9px;
+  vertical-align: top;
+  color: #FFF;
+  padding: 0.5em;
+}
+.masonry__description--title {
+  font-size: 24px;
+}
+.masonry__description--date {
+  font-size: 16px;
+}
+.masonry__img {
+  width: 120px;
+  height: 120px;
+  vertical-align: center;
+}
+.masonry__img:hover {
+  opacity: 0.5;
+  border: 1px solid #FFF;
+}
+@media only screen and (min-width: 1024px) {
+  .masonry {
+    -webkit-column-count: 3;
+            column-count: 3;
+  }
+}
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+  .masonry {
+    -webkit-column-count: 2;
+            column-count: 2;
+  }
+}
+@media only screen and (max-width: 767px) and (min-width: 520px) {
+  .masonry {
+    -webkit-column-count: 1;
+            column-count: 1;
+  }
+}
+
+html {
+  font-family: 'Bai Jamjuree', sans-serif;
+}
+
+/*# sourceMappingURL=main.css.map */
