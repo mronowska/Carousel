@@ -1,21 +1,13 @@
-// .masonry { /* Masonry container */
-//     column-count: 3;
-//     column-gap: 4em;
-
-//     &__item {
-//         background-color: red;
-//         display: inline-block;
-//         margin: 0 0 4em;
-//         width: 100%;
-//     }
-
-// }
-
-/* Box-sizing reset: //w3bits.com/?p=3225 */
-
+@import 'themes/themes';
 
 @import 'abstracts/abstracts';
 
 @import 'layout/layout';
 
-@import 'themes/themes';
+@import 'components/components';
+
+@import 'pages/pages';
+
+@import 'base/base';
+
+@import 'vendors/vendors';

@@ -1,6 +1,4 @@
 //LAYOUT
-$imgListNames : '1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '9.jpg';
-$imgSide: 120px;
 
 html {
     box-sizing: border-box;
@@ -14,7 +12,7 @@ html {
 
   body {
     height: 100vh;
-    background-color: rgb(38,76,191);
+    background-color: #FFF;
   }
   
   .header {
@@ -22,73 +20,80 @@ html {
       text-align: center;
       font-size: 3em;
       margin: 1em 0 1.5em 0;
-      //background-color: #487311;
       color: #FFF;
+      background-color: $darkGreen;
+      font-family: 'Source Code Pro', monospace;
     }
   }
 
   .masonry {
-   
     margin: 1.5 auto;
     max-width: 100%;
     column-gap: 1.5em;
     
-    
+      &:before {
+        content: '';
+        position: absolute;
+        text-align: center;
+        transition: all .6s ease-in-out;
+        width: 100%;
+        height: 100%;
+      
+
+      &:after {
+        background: rgba(24, 188, 156,.9);
+        color: #fff;
+        content: attr(data-title);
+        line-height: 1.5em;
+        overflow: hidden;
+        padding: 1em .5em;
+        text-overflow: ellipsis;
+        white-space: pre;
+      }}
  
-    &__item {
-      background:#0B2573;
-      
-      //border: 2px solid #808080;
-      margin: 0 9px 9px 9px;
-      padding: 1.5em;
-      
-
-    
-      // &--img {
-      //   display: inline-block;
-      //   font-size: 30px;
-      //   color: white;
-      //   background-image: url('../img/3.jpg');
-      //   height: 30px;
-      //   width: 30px;
-      // }
-     
-    }
-    &__description {
-      display: inline-block;
-      line-height: 9px; 
-       vertical-align: top;
-       color: #FFF;
-       padding: 0.5em;
-
-      &--title {
-        font-size: 24px;
-       // color: #487311;
-        // &:hover {
-        //   color: #FFD0BF;
-        // }
-
-        
+      &__item {
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+        text-align: center;
+        margin: 0.5em;
+        background: $lightGreen;
+        max-width: 100%;
+        height: 25em;
+       
       }
-
-      &--date {
-        font-size: 16px;
-        //color: #558C0E;
-
-
-    }
-  }
-    &__img {
-      width: $imgSide;
-      height: $imgSide;
-      vertical-align: center;
-
-       &:hover {
-          opacity: 0.5;
-          border: 1px solid #FFF;
-          
+        
+        &__img {
+          display: block;
+          transition: all .6s ease-in-out;
+          width: 30em;
+          height: 70%;
+          cursor: pointer;
+          opacity: 1;
+          transition: 0.3s;
+        
+            &:hover {
+              opacity: 0.6
+            }
         }
-    }
+
+        &__description {
+          display: inline-block;
+          line-height: 9px; 
+          vertical-align: top;
+          color: #FFF;
+          padding: 0.5em;
+
+            &--title {
+              font-size: 24px;          
+            }
+
+            &--date {
+              font-size: 16px;
+            }
+        }
+       
+
 
       /* Masonry on large screens */
     @media only screen and (min-width: 1024px) {
@@ -104,10 +109,20 @@ html {
     @media only screen and (max-width: 767px) and (min-width: 520px) {
         column-count: 1;
     }
+  }
 
-}
-
-
+  .footer {
+    &__title {
+      text-align: center;
+      font-size: 0.8em;
+      margin: 1em 0 0 0;
+      padding-bottom: 1em;
+      padding-top: 0.5em;
+      color: #FFF;
+      background-color: $darkGreen;
+      font-family: 'Source Code Pro', monospace;
+    }
+  }
   
   
  

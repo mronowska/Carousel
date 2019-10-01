@@ -10,7 +10,7 @@ html {
 
 body {
   height: 100vh;
-  background-color: #264cbf;
+  background-color: #FFF;
 }
 
 .header__title {
@@ -18,6 +18,8 @@ body {
   font-size: 3em;
   margin: 1em 0 1.5em 0;
   color: #FFF;
+  background-color: #203801;
+  font-family: 'Source Code Pro', monospace;
 }
 
 .masonry {
@@ -29,10 +31,49 @@ body {
   /* Masonry on small screens */
 }
 
+.masonry:before {
+  content: '';
+  position: absolute;
+  text-align: center;
+  transition: all .6s ease-in-out;
+  width: 100%;
+  height: 100%;
+}
+
+.masonry:before:after {
+  background: rgba(24, 188, 156, 0.9);
+  color: #fff;
+  content: attr(data-title);
+  line-height: 1.5em;
+  overflow: hidden;
+  padding: 1em .5em;
+  text-overflow: ellipsis;
+  white-space: pre;
+}
+
 .masonry__item {
-  background: #0B2573;
-  margin: 0 9px 9px 9px;
-  padding: 1.5em;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  text-align: center;
+  margin: 0.5em;
+  background: #4E8507;
+  max-width: 100%;
+  height: 25em;
+}
+
+.masonry__img {
+  display: block;
+  transition: all .6s ease-in-out;
+  width: 30em;
+  height: 70%;
+  cursor: pointer;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.masonry__img:hover {
+  opacity: 0.6;
 }
 
 .masonry__description {
@@ -51,17 +92,6 @@ body {
   font-size: 16px;
 }
 
-.masonry__img {
-  width: 120px;
-  height: 120px;
-  vertical-align: center;
-}
-
-.masonry__img:hover {
-  opacity: 0.5;
-  border: 1px solid #FFF;
-}
-
 @media only screen and (min-width: 1024px) {
   .masonry {
     column-count: 3;
@@ -77,5 +107,100 @@ body {
 @media only screen and (max-width: 767px) and (min-width: 520px) {
   .masonry {
     column-count: 1;
+  }
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal__img {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+.modal__content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal__img, .modal__content {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* The Close Button */
+.modal__close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.modal__close:hover,
+.modal__close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+  .modal__img {
+    width: 100%;
   }
 }
