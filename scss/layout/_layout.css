@@ -23,7 +23,10 @@ body {
 }
 
 .masonry {
-  margin: 1.5 auto;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  margin-right: auto;
+  margin-left: 20px;
   max-width: 100%;
   column-gap: 1.5em;
   /* Masonry on large screens */
