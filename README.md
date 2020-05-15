@@ -12,7 +12,7 @@ Project is created with:
 * BEM
 	
 ## Setup
-To run this project, you can easily visit page
+To run this project, you can easily visit page https://mronowska.github.io/Gallery/
 
 ## How I can add a picture?
 This is a simple project that does not download data about files from the database, etc. 
